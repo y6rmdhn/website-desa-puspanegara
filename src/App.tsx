@@ -1,12 +1,15 @@
-import { Button } from "./components/ui/button";
+import { Route, Routes } from "react-router-dom";
+import UmkmPage from "./components/view/umkm";
+import HomePage from "./components/view/homePage";
+import DetailProduk from "./components/view/detailProduk";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-green-500">hello word</h1>
-
-      <Button>tes button shadcn</Button>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/umkm" element={<UmkmPage />} />
+      <Route path="/detail-produk/:id" element={<DetailProduk />} />
+    </Routes>
   );
 }
 
