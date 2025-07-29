@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 // Asumsi Anda menggunakan library seperti shadcn/ui atau sejenisnya
 import { Button } from "@/components/ui/button";

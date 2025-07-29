@@ -1,6 +1,7 @@
 import MainLayouts from "@/components/layouts/MainLayouts";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+// @ts-ignore
 import "swiper/css";
 
 const HomePage = () => {
