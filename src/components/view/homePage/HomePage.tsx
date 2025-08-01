@@ -31,7 +31,7 @@ const HomePage = () => {
                     Selamat Datang di Puspanegara
                   </h1>
                   <p className="text-lg md:text-xl mt-4 max-w-2xl">
-                    Temukan produk UMKM terbaik dari desa kami.
+                    Temukan produk UMKM terbaik dari Kelurahan kami.
                   </p>
                 </div>
               </div>
@@ -44,12 +44,12 @@ const HomePage = () => {
       <div className="px-4 md:px-20 py-16">
         <p className="text-sm font-semibold text-green-600">Kenali UMKM</p>
         <h2 className="text-2xl font-semibold mt-1">
-          Profil UMKM Desa Puspanegara
+          Profil UMKM Kelurahan Puspanegara
         </h2>
         <p className="text-muted-foreground text-sm mt-2 max-w-prose">
-          Berikut adalah video singkat mengenai UMKM di Desa Puspanegara. Simak
-          video berikut untuk mengetahui bagaimana masyarakat Desa Puspanegara
-          mengembangkan potensi usaha mereka!
+          Berikut adalah video singkat mengenai UMKM di Kelurahan Puspanegara.
+          Simak video berikut untuk mengetahui bagaimana masyarakat Kelurahan
+          Puspanegara mengembangkan potensi usaha mereka!
         </p>
 
         <div className="mt-6">

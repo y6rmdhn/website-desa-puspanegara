@@ -13,11 +13,15 @@ const Footer = () => {
               alt="logo"
               className="w-14 h-14 object-cover rounded-md"
             />
-            <span className="text-xl font-bold text-white">Puspanegara</span>
+            <img
+              src="/img/Lambang_Kabupaten_Bogor.png"
+              alt="logo"
+              className="w-10 h-10 object-cover rounded-md"
+            />
           </div>
           <p className="text-slate-400">
             Platform digital untuk memamerkan dan memajukan produk-produk
-            unggulan dari Usaha Mikro, Kecil, dan Menengah (UMKM) di Desa
+            unggulan dari Usaha Mikro, Kecil, dan Menengah (UMKM) di Kelurahan
             Puspanegara.
           </p>
         </div>

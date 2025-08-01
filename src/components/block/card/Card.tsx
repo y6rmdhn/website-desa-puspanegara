@@ -37,7 +37,7 @@ const CardCustom = ({ product }: { product: Product }) => {
           Stok: {product.stock}
         </p>
 
-        <Link to={"/detail-produk/" + product.id} className="w-full">
+        <Link to={"/detail-produk/" + product._id} className="w-full">
           <Button className="mt-2 bg-[#D1D8BE] text-black hover:bg-[#EEEFE0] w-full">
             Add to cart
           </Button>

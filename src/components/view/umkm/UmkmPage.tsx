@@ -8,68 +8,27 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import productServices from "@/services/productManagement.services";
+import { useQuery } from "@tanstack/react-query";
 import { IoSearchOutline } from "react-icons/io5";
 
-const products = [
-  {
-    id: 1,
-    name: "Keripik Singkong Original",
-    price: 14000,
-    stock: 10,
-    imageUrl:
-      "https://blog.tokowahab.com/wp-content/uploads/2024/07/Cara-Membuat-Resep-Keripik-Singkong-Original-Praktis-3-Bahan-Saja.jpg",
-  },
-  {
-    id: 2,
-    name: "Kue Lapis Legit Premium",
-    price: 75000,
-    stock: 5,
-    imageUrl:
-      "https://sweetrip.id/wp-content/uploads/2022/03/5202-lapis-legit.jpg",
-  },
-  {
-    id: 3,
-    name: "Sambal Bawang Pedas",
-    price: 25000,
-    stock: 20,
-    imageUrl:
-      "https://images.tokopedia.net/img/JFrBQq/2022/10/7/e87b5393-2713-42e1-a083-7ac27c81d310.jpg",
-  },
-  {
-    id: 4,
-    name: "Madu Hutan Asli",
-    price: 120000,
-    stock: 8,
-    imageUrl:
-      "https://d3avoj45mekucs.cloudfront.net/astrogempak/media/articleasset/2018/nov/lov-madu.jpg",
-  },
-  {
-    id: 4,
-    name: "Madu Hutan Asli",
-    price: 120000,
-    stock: 8,
-    imageUrl:
-      "https://d3avoj45mekucs.cloudfront.net/astrogempak/media/articleasset/2018/nov/lov-madu.jpg",
-  },
-  {
-    id: 4,
-    name: "Madu Hutan Asli",
-    price: 120000,
-    stock: 8,
-    imageUrl:
-      "https://d3avoj45mekucs.cloudfront.net/astrogempak/media/articleasset/2018/nov/lov-madu.jpg",
-  },
-];
-
 const UmkmPage = () => {
+  const { data: productsData } = useQuery({
+    queryKey: ["products"],
+    queryFn: async () => {
+      const response = await productServices.product();
+      return response.data;
+    },
+  });
+
   return (
     <MainLayouts>
       {/* Bagian Header Halaman */}
       <div className="w-full bg-[#EEEFE0] px-4 md:px-20 py-5">
         <div className="w-full flex flex-col">
-          <h1 className="text-2xl font-bold">Produk UMKM Desa</h1>
+          <h1 className="text-2xl font-bold">Produk UMKM Kelurahan</h1>
           <p className="text-muted-foreground">
-            Temukan berbagai produk dari UMKM di desa kami
+            " Website Kita, Produk Kita, Bangga Bersama! "
           </p>
         </div>
       </div>
@@ -107,8 +66,8 @@ const UmkmPage = () => {
       {/* Bagian Grid Produk */}
       <div className="px-4 md:px-20 mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Gunakan .map() untuk me-render setiap kartu produk */}
-        {products.map((product) => (
-          <CardCustom key={product.id} product={product} />
+        {productsData?.data.map((product) => (
+          <CardCustom key={product._id} product={product} />
         ))}
       </div>
     </MainLayouts>
