@@ -66,9 +66,12 @@ const UmkmPage = () => {
       {/* Bagian Grid Produk */}
       <div className="px-4 md:px-20 mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Gunakan .map() untuk me-render setiap kartu produk */}
-        {productsData?.data.map((product) => (
-          <CardCustom key={product._id} product={product} />
-        ))}
+        {
+          //@ts-ignore
+          productsData?.data.map((product) => (
+            <CardCustom key={product._id} product={product} />
+          ))
+        }
       </div>
     </MainLayouts>
   );

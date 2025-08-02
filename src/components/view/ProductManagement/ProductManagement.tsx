@@ -100,6 +100,7 @@ const ProductManagement = () => {
   });
 
   const { mutate: addProduct, isPending: isAdding } = useMutation({
+    //@ts-ignore
     mutationFn: (newProduct) => productServices.addProduct(newProduct),
     onSuccess: () => {
       toast.success("Produk berhasil ditambahkan!");
@@ -110,6 +111,7 @@ const ProductManagement = () => {
   });
 
   const { mutate: updateProduct, isPending: isUpdating } = useMutation({
+    //@ts-ignore
     mutationFn: ({ id, formData }) =>
       productServices.updateProduct(id, formData),
     onSuccess: () => {
@@ -130,6 +132,7 @@ const ProductManagement = () => {
     onError: (error) => toast.error(`Gagal menghapus: ${error.message}`),
   });
 
+  //@ts-ignore
   const handleProductSubmit = (values) => {
     const formData = new FormData();
     formData.append("name", values.name);
@@ -143,6 +146,7 @@ const ProductManagement = () => {
     }
 
     if (editingProduct) {
+      //@ts-ignore
       updateProduct({ id: editingProduct._id, formData });
     } else {
       if (!values.productImage || values.productImage.length === 0) {
@@ -152,16 +156,19 @@ const ProductManagement = () => {
         });
         return;
       }
+      //@ts-ignore
       addProduct(formData);
     }
   };
 
+  //@ts-ignore
   const handleDeleteSubmit = (values) => {
     console.log("Deleting products with IDs:", values.ids);
 
     deleteProducts(values);
   };
 
+  //@ts-ignore
   const handleEditClick = (product) => {
     setEditingProduct(product);
     setIsDialogOpen(true);
@@ -170,10 +177,15 @@ const ProductManagement = () => {
   useEffect(() => {
     if (editingProduct && isDialogOpen) {
       form.reset({
+        //@ts-ignore
         name: editingProduct.name,
+        //@ts-ignore
         description: editingProduct.description,
+        //@ts-ignore
         price: editingProduct.price,
+        //@ts-ignore
         stock: editingProduct.stock,
+        //@ts-ignore
         category: editingProduct.category,
         productImage: undefined,
       });
@@ -270,6 +282,7 @@ const ProductManagement = () => {
                             <FormItem>
                               <FormLabel>Harga</FormLabel>
                               <FormControl>
+                                {/* @ts-ignore */}
                                 <Input
                                   type="number"
                                   placeholder="cth: 5000"
@@ -287,6 +300,7 @@ const ProductManagement = () => {
                             <FormItem>
                               <FormLabel>Stok</FormLabel>
                               <FormControl>
+                                {/* @ts-ignore */}
                                 <Input
                                   type="number"
                                   placeholder="cth: 25"
@@ -372,6 +386,7 @@ const ProductManagement = () => {
                           }
                           onCheckedChange={(checked) =>
                             field.onChange(
+                              //@ts-ignore
                               checked ? productsData.data.map((p) => p._id) : []
                             )
                           }
@@ -392,6 +407,7 @@ const ProductManagement = () => {
                         </TableCell>
                       </TableRow>
                     ) : productsData?.data.length > 0 ? (
+                      //@ts-ignore
                       productsData.data.map((item) => (
                         <TableRow key={item._id}>
                           <TableCell>

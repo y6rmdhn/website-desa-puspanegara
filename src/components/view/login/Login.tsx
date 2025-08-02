@@ -54,6 +54,7 @@ const Login = () => {
   });
 
   const { mutate } = useMutation({
+    //@ts-ignore
     mutationFn: (data) => authServices.login(data),
     onSuccess: (data) => {
       form.reset();

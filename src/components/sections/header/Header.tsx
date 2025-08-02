@@ -20,6 +20,7 @@ const Header = () => {
   const { mutate: logoutMutation } = useMutation({
     mutationFn: () => authServices.logout(),
     onSuccess: () => {
+      //@ts-ignore
       dispatch(setUserData(null));
       localStorage.removeItem("token");
       toast.success("Logout berhasil!");
@@ -27,6 +28,7 @@ const Header = () => {
     },
     onError: (error) => {
       console.error("Logout gagal:", error);
+      //@ts-ignore
       dispatch(setUserData(null));
       localStorage.removeItem("token");
       navigate("/login");

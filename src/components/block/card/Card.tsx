@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 type Product = {
-  id: number;
+  _id: number;
   name: string;
   price: number;
   stock: number;

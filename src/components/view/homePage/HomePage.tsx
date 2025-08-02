@@ -5,7 +5,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const HomePage = () => {
-  const banners = ["/carousel/DSC_0816.JPG", "/carousel/DSC_0834.JPG"];
+  const banners = ["/carousel/DSC_0816.JPG", "/carousel/kel-puspanegara.png"];
 
   return (
     <MainLayouts>
@@ -27,10 +27,13 @@ const HomePage = () => {
                 />
                 <div className="absolute inset-0 bg-black/50 z-10" />
                 <div className="relative z-20 flex flex-col items-center justify-center px-4 text-center">
-                  <h1 className="text-4xl md:text-5xl font-bold">
-                    Selamat Datang di Puspanegara
+                  <h1 className="text-4xl md:text-6xl font-bold mt-2">
+                    Selamat Datang di Puspasite
                   </h1>
-                  <p className="text-lg md:text-xl mt-4 max-w-2xl">
+                  <p className="text-lg md:text-base mt-4 max-w-2xl text-neutral-200">
+                    <p className="text-sm md:text-xl tracking-widest font-semibold text-neutral-300 uppercase mb-3">
+                      Puspanegara Website
+                    </p>
                     Temukan produk UMKM terbaik dari Kelurahan kami.
                   </p>
                 </div>

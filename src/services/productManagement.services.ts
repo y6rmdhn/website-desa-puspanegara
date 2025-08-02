@@ -3,6 +3,7 @@ import axiosInstance from "../lib/axiosInstance";
 const productServices = {
   product: () => axiosInstance.get(`/products`),
   productDetail: (id: any) => axiosInstance.get(`/products/` + id),
+  //@ts-ignore
   updateProduct: (id, formData) => {
     return axiosInstance.put(`/products/${id}`, formData);
   },

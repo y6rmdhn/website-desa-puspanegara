@@ -2,8 +2,9 @@ import { ChevronLeft } from "lucide-react";
 import { Button } from "../ui/button";
 import { IoPerson, IoPricetag } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import type { PropsWithChildren } from "react";
 
-const SidebarItem = ({ children }) => {
+const SidebarItem = ({ children }: PropsWithChildren) => {
   return (
     <Button
       variant="ghost"
@@ -15,7 +16,7 @@ const SidebarItem = ({ children }) => {
   );
 };
 
-export const AdminLayout = (props) => {
+export const AdminLayout = (props: any) => {
   return (
     <div>
       <div className="flex">
